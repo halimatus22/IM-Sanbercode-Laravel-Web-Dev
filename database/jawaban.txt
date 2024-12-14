@@ -1,0 +1,40 @@
+1.buat database
+    create database myshop;
+2.buat tabel dalam database
+    create table users(
+    id int AUTO_INCREMENT PRIMARY KEY,
+    name varchar(255),
+    email varchar(255),
+    password varchar(255)
+    );
+    create table categories(
+        id int AUTO_INCREMENT PRIMARY KEY,
+        name varchar (255)
+    );
+    create table items(
+        id int AUTO_INCREMENT PRIMARY KEY,
+        name varchar(255),
+        description varchar(255),
+        price int,
+        stock int,
+        category_id int,
+        FOREIGN KEY(category_id) REFERENCES categories(id)
+        )
+3. memasukan data pada table
+    insert into users(name,email,password)VALUES("John Doe","john@doe.com","john123"),("Jane Doe","jane@doe.com","jenita123");
+    insert into categories(name)VALUES("gadget"),("cloth"),("men"),("women"),("branded");
+    insert into users(name,email,password)VALUES("John Doe","john@doe.com","john123"),("Jane Doe","jane@doe.com","jenita123");
+    insert into categories(name)VALUES("gadget"),("cloth"),("men"),("women"),("branded"); 
+4. mengambil data dari database
+    a. mengambil data users
+        select id,name,email from users;
+    b. mengambil data items
+        - menampilkan data items yang price nya lebih dari 1000000
+            SELECT*from items where price > 1000000;
+        - mengambil data yang derupa dengan kata sang
+            SELECT*from items where name LIKE "%sang%";
+    c. menampilkan data items join dengan kategori
+        select items.*,categories.name as kategori from items inner join categories on items.category_id = categories.id;
+5. mengubah harga sumsang b50 menjadi 2500000
+    update items set price = 2500000 where id=1;
+
