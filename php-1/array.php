@@ -146,6 +146,8 @@
         echo "<pre>";
         print_r($bio);
         echo "</pre>";
+        
+        
 
     ?>
 </body>

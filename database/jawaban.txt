@@ -1,4 +1,4 @@
-1.buat database
+.1.buat database
     create database myshop;
 2.buat tabel dalam database
     create table users(
@@ -37,4 +37,3 @@
         select items.*,categories.name as kategori from items inner join categories on items.category_id = categories.id;
 5. mengubah harga sumsang b50 menjadi 2500000
     update items set price = 2500000 where id=1;
-
