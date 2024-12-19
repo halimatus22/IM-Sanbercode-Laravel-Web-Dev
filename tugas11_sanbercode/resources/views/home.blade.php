@@ -1,3 +1,8 @@
+@extends('master')
+@section('title')
+    Home
+@endsection
+@section('content')
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,3 +27,5 @@
     </ol>
 </body>
 </html>
+
+@endsection

@@ -15,6 +15,18 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', [DashboardController::class,"index"]);
+Route::get('/', function(){
+    return view('master');
+});
+Route::get('/data-table', function(){
+    return view('plugin.datatable');
+});
+Route::get('/table', function(){
+    return view('plugin.table');
+});
+
 Route::get('/register',[AuthController::class,"register"]);
 Route::post('/welcome',[AuthController::class,'welcome']);
+Route::get('/home', function(){
+    return view('home');
+});
