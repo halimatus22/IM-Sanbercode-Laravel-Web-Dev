@@ -34,8 +34,8 @@ class CastController extends Controller
         return view('cast.show', compact('cast'));
     }
     public function edit($id){
-        $cast = DB::table('post')->where('id', $id)->first();
-        return view('post.edit', compact('post'));
+        $cast = DB::table('cast')->where('id', $id)->first();
+        return view('cast.edit', compact('cast'));
     }
 
     public function update(Request $request){
